@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        width: 100%;
+height: 100vh;
+        background: linear-gradient(135deg,lightgreen , lightseagreen
+
+        );
+       
+overflow: hidden;
+
+    }
+    .todo-app{
+        width: 100%;
+        max-width: 540px;
+        background-color: #fff;
+        margin: 100px auto 20px;
+        padding: 40px 30px 70px;
+        border-radius: 10px;
+        box-shadow:   3px 4px 9px 0px black ;
+        
+    }
+    .todo-app h2{
+        color: #002765;
+        display: flex;
+        align-items: center;
+    margin-bottom: 20px;
+
+
+    }
+    .todo-app h2 img{
+        width: 30px;
+        margin-left: 12px;
+
+    }
+    .row{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: white;
+        border-radius: 30px;
+        padding-left: 20px;
+        margin-bottom: 25px;
+        border: 1px solid lightblue;
+
+    }
+    input{
+        flex: 1;
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 10px;
+        font-weight: 14px;
+    
+
+    }
+    button{
+        border: none;
+        outline: none;
+        padding: 16px 50px;
+        background: linear-gradient(132deg, blue, lightgreen,lightseagreen);
+
+        color:#fff ;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 40px;
+    }
+
+    ul li{
+        list-style: none;
+        font-size: 17px;
+        padding:12px 8px 12px 50px;
+        cursor: pointer;
+        user-select: none;
+        position: relative;
+
+
+    }
+    ul li::before{
+        content: '';
+        position: absolute;
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+        background-image: url(images/unchecked.png);
+        background-size: cover;
+        background-position: center;
+        top: 12px;
+        left: 8px;
+    }
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background-image: url(images/checked.png);
+}
+ul li span{
+    position:absolute;
+    right:0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    color:#555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+
+}
+ul li span:hover{
+    background-color: #edeef0;
+
+}
+   /* Responsive Design */
+@media screen and (max-width: 768px) {
+    .todo-app {
+        max-width: 90%;
+        padding: 30px 20px 50px;
+        margin: 50px auto 20px;
+    }
+    .row {
+        flex-direction: column;
+        padding: 10px;
+        border-radius: 15px;
+    }
+    input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    button {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .todo-app {
+        max-width: 95%;
+        padding: 20px 15px 40px;
+    }
+    .row {
+        padding: 8px;
+    }
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+    ul li {
+        font-size: 15px;
+        padding: 10px 8px 10px 40px;
+    }
+    ul li::before {
+        height: 24px;
+        width: 24px;
+        top: 10px;
+        left: 5px;
+    }
+    ul li span {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+} 
+</style>
+<body>
+  <div class="container">
+    <div class="todo-app">
+        <h2>To-Do List <img src="images/icon.png" alt=""></h2>
+        <div class="row">
+            <input type="text" id="input-box" placeholder="Add your text">
+            <button id="addbtn">Add</button>
+
+
+
+        </div>
+        
+        
+        
+        
+        
+
+
+
+
+
+
+
+        <ul id="list-container">
+            <!-- <li class="checked">Tast 1</li>
+            <li>Tast 2</li>
+            <li>Tast 3</li> -->
+        </ul>
+    </div>
+  </div> 
+   <script src="script.js"></script>
+</body>
+</html>
